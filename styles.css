@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --color-bg: #000000;
+    --color-text: #ffffff;
+    --color-primary: #8a2be2;
+    --color-secondary: #520082;
+    --color-accent: #9370db;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, var(--color-bg), var(--color-secondary));
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    
+    border-radius: 10px;
+    margin-top: 20px;
+    
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-left: 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--color-accent);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+header, section {
+    margin: 60px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--color-accent);
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: var(--color-text);
+    cursor: pointer;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.feature-cards, .info-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px 0;
+    width: calc(33.333% - 20px);
+    transition:  0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.card i {
+    font-size: 48px;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: var(--color-text);
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--color-accent);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-primary);
+    color: var(--color-text);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: background 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background: var(--color-accent);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25D366;
+    color: var(--color-text);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0);
+    
+    border-radius: 0 0 10px 10px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo del menú hamburguesa */
+.hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Para que el menú hamburguesa aparezca sobre todo el contenido */
+.nav-links {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+   
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.nav-links.active {
+    left: 0;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+/* Resto de los estilos */
+
+    .feature-cards, .info-cards {
+        flex-direction: column;
+    }
+    
+    .card {
+        width: 100%;
+    }
+}
