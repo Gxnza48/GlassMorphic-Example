@@ -20,6 +20,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     min-height: 100vh;
+    
 }
 
 .container {
@@ -125,6 +126,143 @@ p {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+#information {
+    padding: 60px 0;
+}
+
+#information h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-cards .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1;
+    min-width: 250px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.info-cards .card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.info-cards .card i {
+    font-size: 48px;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.info-cards .card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+}
+
+.info-cards .card p {
+    font-size: 16px;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+/* Updated Footer Styles */
+footer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 60px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-accent);
+}
+
+.footer-section p,
+.footer-section ul li {
+    font-size: 14px;
+    color: var(--color-text);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: var(--color-text);
+    opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .info-cards {
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
 }
 
 .card {
@@ -310,4 +448,235 @@ nav {
     .card {
         width: 100%;
     }
+}
+
+/* Add this to your existing CSS */
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    color: var(--color-text);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: var(--color-text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-accent);
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Update existing styles */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.auth-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: var(--color-primary);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 1rem;
+}
+
+.auth-buttons button:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.auth-buttons button i {
+    font-size: 1.2em;
+}
+
+/* Profile dropdown styles */
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+    color: var(--color-text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+#login-form, #signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#login-form h2, #signup-form h2 {
+    text-align: center;
+    color: var(--color-accent);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+#login-form input, #signup-form input {
+    width: 100%;
+    padding: 12px 12px 12px 35px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--color-text);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#login-form button, #signup-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: var(--color-primary);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;  /* Change from inline-block to block */
+    margin: 0 auto;  /* Center the button horizontally */
+    width: 100%;     /* Make the button full width */
+    max-width: 200px; /* Limit the maximum width of the button */
+}
+
+#login-form button:hover, #signup-form button:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+#login-form p, #signup-form p {
+    text-align: center;
+    font-size: 14px;
+}
+
+#login-form a, #signup-form a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#login-form a:hover, #signup-form a:hover {
+    text-decoration: underline;
+}
+
+/* Custom Toastify Styles */
+.toastify {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    padding: 16px 20px !important;
+    color: var(--color-text) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.toastify::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    border-radius: 10px 10px 0 0;
+}
+
+.toastify-content {
+    display: flex;
+    align-items: center;
+}
+
+.toastify-content::before {
+    content: '🔔';
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.toastify-success::before {
+    content: '✅';
+}
+
+.toastify-error::before {
+    content: '❌';
 }
