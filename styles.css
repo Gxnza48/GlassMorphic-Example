@@ -382,7 +382,7 @@ nav {
 .hamburger {
     display: block;
     position: fixed;
-    top: 20px;
+    top: 45px;
     right: 20px;
     cursor: pointer;
     z-index: 1000;
@@ -437,6 +437,11 @@ nav {
     font-size: 24px;
     text-decoration: none;
     color: var(--color-text);
+}
+
+#profileBtn {
+    margin-right: 3rem;
+    
 }
 
 /* Resto de los estilos */
